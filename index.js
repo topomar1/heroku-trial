@@ -97,4 +97,4 @@ const blogResolvers = {
 
 const server = new ApolloServer({typeDefs: schemas, resolvers: blogResolvers})
 
-server.listen().then(({url}) => {console.log(`Server running on ${url}`)})
+server.listen(port).then(({url}) => {console.log(`Server running on ${url}`)})
