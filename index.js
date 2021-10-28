@@ -1,6 +1,8 @@
 
 const {ApolloServer, gql} = require("apollo-server");
 
+const port = process.env.PORT || 8000
+
 const blogs = [
     {
         id:32,
