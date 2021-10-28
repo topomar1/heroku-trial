@@ -5,7 +5,7 @@ const port = process.env.PORT || 8000
 
 const blogs = [
     {
-        id:32,
+        id:00,
         title: "new blog",
         content: "adaCreate a Blog post server using graphql and nodejs",
         author:{id:12,name:"dave",email:"dave12@gmail.com"},
@@ -21,7 +21,7 @@ const blogs = [
 
     },
     {
-        id:32,
+        id:02,
         title: "new blog",
         content: "adaCreate a Blog post server using graphql and nodejs",
         author:{id:12,name:"dave",email:"dave12@gmail.com"},
@@ -69,7 +69,6 @@ const schemas = gql `
         deleteBlog(id: ID!):String,
         deleteComment(id: ID!):String, 
         modifyBlog(id: ID!):Blog,
-
     }
 
 `
