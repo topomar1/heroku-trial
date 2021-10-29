@@ -1,0 +1,62 @@
+const mongoose = require('mongoose');
+const {Schema} = mongoose; 
+
+
+const AuthorSchema = new Schema({
+    authorName: {
+        type: String,
+        required: true,
+    },
+    authorEmailAddress: {
+        type: String,
+        required: true
+    }
+})
+
+
+const CommentSchema = new Schema({
+    comment: {
+        type: String,
+        required: true,
+    },
+    author:{
+        type: AuthorSchema,
+        required: true
+
+    },
+
+})
+
+
+const BlogSchema = new Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: AuthorSchema,
+        required: true
+    },
+    comments: {
+        type:[CommentSchema],
+        required: false
+
+    },
+    likes: {
+        type: Number,
+        required: false
+    }
+
+})
+
+
+const Blog = mongoose.model('Blog', BlogSchema)
+
+
+module.exports = {
+    Blog
+}
