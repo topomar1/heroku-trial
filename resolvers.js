@@ -110,9 +110,9 @@ const resolvers = {
             const collection = client.db("test").collection("blogs");
             try {
                 deleteResults = collection.deleteOne(doc)
-                return "Blog deleted successfully"
+                return "Blog deleted"
             } catch (e) {
-                return `Something went wrong, error ${e}`
+                return `Error!!!, error ${e}`
             }
 
         },
@@ -151,7 +151,7 @@ const resolvers = {
 
             filter = { blogId: blogId }
 
-            // temp = collection.findOne(filter)
+        
 
 
             const updateDoc = {
